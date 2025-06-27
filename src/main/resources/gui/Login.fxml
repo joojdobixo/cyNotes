@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="800.0"
+            style="-fx-background-color: #232946;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="gui.ControladorLogin">
+    <children>
+        <!-- Painel preto/escuro central -->
+        <VBox alignment="CENTER" style="-fx-background-color: #121826; -fx-background-radius: 15;"
+              AnchorPane.bottomAnchor="100" AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="200"
+              AnchorPane.topAnchor="100">
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+
+            <!-- Ícone/Logo -->
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../CyNotes-icon.png" />
+                </image>
+                <VBox.margin>
+                    <Insets bottom="20.0" />
+                </VBox.margin>
+            </ImageView>
+
+            <!-- Título -->
+            <Text fill="#fffffe" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;"
+                  text="Login" textAlignment="CENTER">
+                <font>
+                    <Font name="Cooper Black" size="32.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="30.0" />
+                </VBox.margin>
+            </Text>
+
+            <!-- Campos do formulário -->
+            <VBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 0 20;">
+                <!-- Email -->
+                <Label style="-fx-font-weight: bold;" text="Email" textFill="#b8c1ec">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="campoEmail" promptText="digite seu email"
+                           style="-fx-background-color: #232946; -fx-text-fill: white;
+                           -fx-prompt-text-fill: #b8c1ec; -fx-background-radius: 5;
+                           -fx-border-color: #b8c1ec; -fx-border-radius: 5; -fx-border-width: 1.5;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <!-- Senha -->
+                <Label style="-fx-font-weight: bold;" text="Senha" textFill="#b8c1ec">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="campoSenha" promptText="digite sua senha"
+                               style="-fx-background-color: #232946; -fx-text-fill: white;
+                               -fx-prompt-text-fill: #b8c1ec; -fx-background-radius: 5;
+                               -fx-border-color: #b8c1ec; -fx-border-radius: 5; -fx-border-width: 1.5;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </PasswordField>
+            </VBox>
+
+            <!-- Botão de Login -->
+            <Button fx:id="botaoLogin" mnemonicParsing="false" onAction="#fazerLogin"
+                    style="-fx-background-color: #eebbc3; -fx-background-radius: 8;
+                    -fx-text-fill: #232946; -fx-font-weight: bold; -fx-cursor: hand;" text="Entrar">
+                <font>
+                    <Font size="16.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+                </padding>
+            </Button>
+
+            <!-- Link para Cadastro -->
+            <HBox alignment="CENTER" spacing="5.0" style="-fx-padding: 20 0 0 0;">
+                <Text fill="#b8c1ec" text="Não tem uma conta? " translateY="5.0" />
+                <Button fx:id="botaoCadastro" mnemonicParsing="false" onAction="#abrirTelaCadastro"
+                        style="-fx-background-color: transparent; -fx-text-fill: #eebbc3;
+                        -fx-underline: true; -fx-padding: 0; -fx-cursor: hand;" text="Cadastre-se" translateY="5.0" />
+            </HBox>
+
+            <!-- Label para mensagens -->
+            <Label fx:id="labelMensagem" style="-fx-padding: 10 0 0 0;" textFill="#eebbc3">
+                <font>
+                    <Font size="12.0" />
+                </font>
+            </Label>
+        </VBox>
+    </children>
+</AnchorPane>

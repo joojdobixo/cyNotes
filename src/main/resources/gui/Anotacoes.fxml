@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #232946;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControladorAnotacoes">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="-11.0">
+                <image>
+                    <Image url="@../CyNotes-icon.png" />
+                </image>
+            </ImageView>
+
+            <Text fill="#fffffe" strokeType="OUTSIDE" strokeWidth="0.0" text="MINHAS ANOTAÇÕES" textAlignment="CENTER" translateY="-9.0">
+                <font>
+                    <Font name="Cooper Black" size="32.0" />
+                </font>
+            </Text>
+
+            <HBox alignment="TOP_CENTER" spacing="30.0" translateY="-7.0" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+
+                <!-- Painel de Criação/Edição -->
+                <VBox alignment="TOP_CENTER" maxWidth="350" minWidth="300" spacing="20.0" style="-fx-background-color: #fffffe; -fx-background-radius: 15;" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+
+                    <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova Anotação" textAlignment="CENTER">
+                        <font>
+                            <Font name="Arial Black" size="20.0" />
+                        </font>
+                    </Text>
+
+                    <VBox alignment="CENTER" spacing="10.0">
+                        <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="campoTitulo" maxWidth="280" prefHeight="35.0" promptText="Digite o título da anotação" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8; -fx-prompt-text-fill: #999999;" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10.0">
+                        <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Conteúdo" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Text>
+                        <TextArea fx:id="campoConteudo" maxWidth="280" prefHeight="250.0" promptText="Digite o conteúdo da sua anotação..." style="-fx-background-color: #f5f5f5; -fx-background-radius: 8; -fx-prompt-text-fill: #999999;" wrapText="true" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextArea>
+                    </VBox>
+
+                    <Button fx:id="btnSalvarAnotacao" maxWidth="150" mnemonicParsing="false" onAction="#salvarAnotacao" prefHeight="45.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 10;" text="Salvar" textAlignment="CENTER" textFill="#232946" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Arial Black" size="15.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnSalvarEdicaoAnotacao" maxWidth="150" mnemonicParsing="false" onAction="#salvarEdicaoAnotacao" prefHeight="45.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 10;" text="Salvar Edição" textAlignment="CENTER" textFill="#232946" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Arial Black" size="15.0" />
+                        </font>
+                    </Button>
+                </VBox>
+
+                <!-- Lista de Anotações -->
+                <VBox alignment="TOP_CENTER" maxWidth="370" minWidth="300" spacing="15.0" style="-fx-background-color: #fffffe; -fx-background-radius: 15;" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+
+                    <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Suas Anotações" textAlignment="CENTER">
+                        <font>
+                            <Font name="Arial Black" size="20.0" />
+                        </font>
+                    </Text>
+
+                    <ListView fx:id="listaAnotacoes" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8;" VBox.vgrow="ALWAYS" />
+
+                    <HBox alignment="CENTER" spacing="10.0">
+                        <Button mnemonicParsing="false" onAction="#editarAnotacao" prefHeight="35.0" minWidth="80" style="-fx-background-color: #eebbc3; -fx-background-radius: 8;" text="Editar" textFill="#232946">
+                            <font>
+                                <Font name="Arial Black" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#excluirAnotacao" prefHeight="35.0" minWidth="80" style="-fx-background-color: #b8c1ec; -fx-background-radius: 8;" text="Excluir" textFill="#232946">
+                            <font>
+                                <Font name="Arial Black" size="12.0" />
+                            </font>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

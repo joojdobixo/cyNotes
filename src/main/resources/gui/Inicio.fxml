@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #232946;"
+            xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="gui.ControladorInicial">
+    <children>
+        <HBox alignment="CENTER" spacing="80.0" AnchorPane.bottomAnchor="30" AnchorPane.leftAnchor="30"
+              AnchorPane.rightAnchor="30" AnchorPane.topAnchor="30">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+
+            <VBox alignment="CENTER_LEFT" spacing="40.0" HBox.hgrow="ALWAYS">
+                <Text fill="#fffffe" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="ORGANIZE SUA ROTINA COM UM CLIQUE!" textAlignment="CENTER" wrappingWidth="355.0">
+                    <font>
+                        <Font name="Cooper Black" size="40.0" />
+                    </font>
+                </Text>
+
+                <Text fill="#fffffe" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Um gerenciador de tarefas leve, prático e eficiente. Ideal para quem quer manter o dia em ordem, sem complicações. Comece, conclua e acompanhe suas tarefas de forma rápida e direta."
+                      textAlignment="CENTER" wrappingWidth="356.0">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="20.0" />
+                    </font>
+                </Text>
+
+                <HBox alignment="CENTER_LEFT" spacing="20.0">
+                    <Button minWidth="100" mnemonicParsing="false" onAction="#abrirLogin"
+                            prefHeight="45.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 10;"
+                            text="Login" textAlignment="CENTER" textFill="#232946" translateX="45.0" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Arial Black" size="14.0" />
+                        </font>
+                    </Button>
+
+                    <Button minWidth="130" mnemonicParsing="false" onAction="#abrirCadastro"
+                            prefHeight="45.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 10;"
+                            text="Cadastre-se" textAlignment="CENTER" textFill="#232946" translateX="45.0" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Arial Black" size="14.0" />
+                        </font>
+                    </Button>
+                </HBox>
+            </VBox>
+
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                <ImageView fitHeight="370.0" fitWidth="309.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../CyNotes-icon.png" />
+                    </image>
+                </ImageView>
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>

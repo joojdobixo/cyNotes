@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #232946;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControladorCadastro">
+    <children>
+        <!-- Painel preto/escuro central -->
+        <VBox alignment="CENTER" layoutX="150.0" layoutY="46.0" prefHeight="508.0" prefWidth="500.0" style="-fx-background-color: #121826; -fx-background-radius: 15;" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+            <padding>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+
+            <!-- Título -->
+            <Text fill="#fffffe" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Cadastro" textAlignment="CENTER" translateY="12.0">
+                <font>
+                    <Font name="Cooper Black" size="32.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="20.0" />
+                </VBox.margin>
+            </Text>
+
+            <!-- Campos do formulário -->
+            <VBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-padding: 0 20;">
+                <!-- Nome -->
+                <Label style="-fx-font-weight: bold;" text="Nome" textAlignment="CENTER" textFill="#b8c1ec">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="campoNome" promptText="digite seu nome" style="-fx-background-color: #232946; -fx-text-fill: white; -fx-prompt-text-fill: #b8c1ec; -fx-background-radius: 5; -fx-border-color: #b8c1ec; -fx-border-radius: 5; -fx-border-width: 1.5;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <!-- Email -->
+                <Label style="-fx-font-weight: bold;" text="Email" textAlignment="CENTER" textFill="#b8c1ec">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="campoEmail" promptText="digite seu email" style="-fx-background-color: #232946; -fx-text-fill: white; -fx-prompt-text-fill: #b8c1ec; -fx-background-radius: 5; -fx-border-color: #b8c1ec; -fx-border-radius: 5; -fx-border-width: 1.5;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </TextField>
+
+                <!-- Senha -->
+                <Label style="-fx-font-weight: bold;" text="Senha" textFill="#b8c1ec">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <PasswordField fx:id="campoSenha" promptText="crie sua senha" style="-fx-background-color: #232946; -fx-text-fill: white; -fx-prompt-text-fill: #b8c1ec; -fx-background-radius: 5; -fx-border-color: #b8c1ec; -fx-border-radius: 5; -fx-border-width: 1.5;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </PasswordField>
+
+                <!-- Telefone -->
+                <Label style="-fx-font-weight: bold;" text="Telefone" textFill="#b8c1ec">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="campoTelefone" promptText="digite o número do seu telefone com DDD" style="-fx-background-color: #232946; -fx-text-fill: white; -fx-prompt-text-fill: #b8c1ec; -fx-background-radius: 5; -fx-border-color: #b8c1ec; -fx-border-radius: 5; -fx-border-width: 1.5;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="25.0" />
+                    </VBox.margin>
+                </TextField>
+            </VBox>
+
+            <!-- Botão de Cadastro -->
+            <Button fx:id="botaoCadastrar" mnemonicParsing="false" onAction="#cadastrarUsuario" style="-fx-background-color: #eebbc3; -fx-background-radius: 8; -fx-text-fill: #232946; -fx-font-weight: bold; -fx-cursor: hand;" text="Cadastrar">
+                <font>
+                    <Font size="16.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </Button>
+
+            <!-- Label para mensagens -->
+            <Label fx:id="labelMensagem" style="-fx-padding: 10 0 0 0;" textFill="#eebbc3">
+                <font>
+                    <Font size="12.0" />
+                </font>
+            </Label>
+        </VBox>
+    </children>
+</AnchorPane>

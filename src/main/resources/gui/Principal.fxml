@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #232946;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControladorPrincipal">
+    <children>
+        <VBox fx:id="painelPrincial" alignment="TOP_CENTER" spacing="20.0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" maxHeight="60" prefHeight="60.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                <children>
+                    <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../CyNotes-icon.png" />
+                        </image>
+                    </ImageView>
+                    <Text fill="#fffffe" strokeType="OUTSIDE" strokeWidth="0.0" text="CyNotes" textAlignment="CENTER">
+                        <font>
+                            <Font name="Cooper Black" size="28.0" />
+                        </font>
+                    </Text>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Label fx:id="labelUsuarioLogado" text="Bem-vindo(a )!" textFill="#fffffe">
+                        <font>
+                            <Font name="Arial Black" size="16.0" />
+                        </font>
+                    </Label>
+                    <Button minWidth="100" mnemonicParsing="false" onAction="#abrirAnotacoes" prefHeight="35.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 8;" text="Anotações" textFill="#232946">
+                        <font>
+                            <Font name="Arial Black" size="12.0" />
+                        </font>
+                    </Button>
+                    <Button minWidth="100" mnemonicParsing="false" onAction="#abrirConta" prefHeight="35.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 8;" text="Conta" textFill="#232946">
+                        <font>
+                            <Font name="Arial Black" size="12.0" />
+                        </font>
+                    </Button>
+                    <Button minWidth="80" mnemonicParsing="false" onAction="#sair" prefHeight="35.0" style="-fx-background-color: #b8c1ec; -fx-background-radius: 8;" text="Sair" textFill="#232946">
+                        <font>
+                            <Font name="Arial Black" size="12.0" />
+                        </font>
+                    </Button>
+                </children>
+            </HBox>
+
+            <!-- Conteúdo Principal -->
+            <HBox alignment="TOP_CENTER" spacing="30.0" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+
+                <!-- Painel de Criação de Tarefa -->
+                <VBox alignment="TOP_CENTER" maxWidth="450" minWidth="350" spacing="20.0" style="-fx-background-color: #fffffe; -fx-background-radius: 15;" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+
+                    <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova Tarefa" textAlignment="CENTER">
+                        <font>
+                            <Font name="Arial Black" size="22.0" />
+                        </font>
+                    </Text>
+
+                    <VBox alignment="CENTER" spacing="10.0">
+                        <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="campoTituloTarefa" maxWidth="350" prefHeight="35.0" promptText="Digite o título da tarefa" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8; -fx-prompt-text-fill: #999999;" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextField>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10.0">
+                        <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Text>
+                        <TextArea fx:id="campoDescricaoTarefa" maxWidth="350" prefHeight="120.0" promptText="Digite a descrição da tarefa (opcional)" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8; -fx-prompt-text-fill: #999999;" wrapText="true" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TextArea>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="10.0">
+                        <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Vencimento" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Text>
+                        <DatePicker fx:id="campoDataVencimento" maxWidth="350" prefHeight="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8;" HBox.hgrow="ALWAYS" />
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="15.0">
+                        <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Lembrete" textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Black" size="16.0" />
+                            </font>
+                        </Text>
+                        <HBox alignment="CENTER" spacing="15.0">
+                            <VBox alignment="CENTER" spacing="5.0">
+                                <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial Black" size="14.0" />
+                                    </font>
+                                </Text>
+                                <DatePicker fx:id="dataLembrete" maxWidth="160" prefHeight="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8;" HBox.hgrow="ALWAYS" />
+                            </VBox>
+                            <VBox alignment="CENTER" spacing="5.0">
+                                <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Hora" textAlignment="CENTER">
+                                    <font>
+                                        <Font name="Arial Black" size="14.0" />
+                                    </font>
+                                </Text>
+                                <Spinner fx:id="horaLembrete" maxWidth="120" prefHeight="35.0" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8;" HBox.hgrow="ALWAYS" />
+                            </VBox>
+                        </HBox>
+                    </VBox>
+
+                    <Button fx:id="btnAdicionarTarefa" maxWidth="180" mnemonicParsing="false" onAction="#adicionarTarefa" prefHeight="45.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 10;" text="Adicionar Tarefa" textAlignment="CENTER" textFill="#232946" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Arial Black" size="15.0" />
+                        </font>
+                    </Button>
+                    <Button fx:id="btnSalvarEdicaoTarefa" maxWidth="180" mnemonicParsing="false" onAction="#salvarEdicaoTarefa" prefHeight="45.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 10;" text="Salvar Edição" textAlignment="CENTER" textFill="#232946" HBox.hgrow="ALWAYS">
+                        <font>
+                            <Font name="Arial Black" size="15.0" />
+                        </font>
+                    </Button>
+                </VBox>
+
+                <!-- Lista de Tarefas -->
+                <VBox alignment="TOP_CENTER" maxWidth="470" minWidth="350" spacing="15.0" style="-fx-background-color: #fffffe; -fx-background-radius: 15;" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+
+                    <Text fill="#232946" strokeType="OUTSIDE" strokeWidth="0.0" text="Suas Tarefas" textAlignment="CENTER">
+                        <font>
+                            <Font name="Arial Black" size="22.0" />
+                        </font>
+                    </Text>
+
+                    <ListView fx:id="listaTarefas" style="-fx-background-color: #f5f5f5; -fx-background-radius: 8;" VBox.vgrow="ALWAYS" />
+
+                    <HBox alignment="CENTER" spacing="10.0">
+                        <Button minWidth="80" mnemonicParsing="false" onAction="#editarTarefa" prefHeight="35.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 8;" text="Editar" textFill="#232946">
+                            <font>
+                                <Font name="Arial Black" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button minWidth="80" mnemonicParsing="false" onAction="#excluirTarefa" prefHeight="35.0" style="-fx-background-color: #b8c1ec; -fx-background-radius: 8;" text="Excluir" textFill="#232946">
+                            <font>
+                                <Font name="Arial Black" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button minWidth="150" mnemonicParsing="false" onAction="#marcarDesmarcarTarefa" prefHeight="35.0" style="-fx-background-color: #eebbc3; -fx-background-radius: 8;" text="Marcar como concluída /Desmarcar" textFill="#232946">
+                            <font>
+                                <Font name="Arial Black" size="12.0" />
+                            </font>
+                        </Button>
+                    </HBox>
+                </VBox>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
